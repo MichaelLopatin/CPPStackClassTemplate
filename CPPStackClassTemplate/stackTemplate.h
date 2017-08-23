@@ -5,25 +5,25 @@
 
 
 
-template <class TypeOfValue> //шаблон класса "стек"
+template <class TypeOfValue> //С€Р°Р±Р»РѕРЅ РєР»Р°СЃСЃР° "СЃС‚РµРє"
 class RealStack
 {
-	TypeOfValue *arrStack; // указатель на динамический массив элементов стека
-	int topIndex = -1; // индекс вершины стека
-	int maxSizeOfStack; // максимальный размер стека
+	TypeOfValue *arrStack; // СѓРєР°Р·Р°С‚РµР»СЊ РЅР° РґРёРЅР°РјРёС‡РµСЃРєРёР№ РјР°СЃСЃРёРІ СЌР»РµРјРµРЅС‚РѕРІ СЃС‚РµРєР°
+	int topIndex = -1; // РёРЅРґРµРєСЃ РІРµСЂС€РёРЅС‹ СЃС‚РµРєР°
+	int maxSizeOfStack; // РјР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ СЃС‚РµРєР°
 
 public:
-	RealStack(); // конструктор по умолчанию
-	RealStack(int maxSizeOfStack); // конструктор с параметрами
-	RealStack(RealStack & oldArrStack); // конструктор копирования 
+	RealStack(); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+	RealStack(int maxSizeOfStack); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	RealStack(RealStack & oldArrStack); // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёВ¤ 
 
-	~RealStack(); // деструктор
+	~RealStack(); // РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 
-	void putVal(TypeOfValue val); // "положить" элемент в стек
-	TypeOfValue getVal(); // извлечь элемент из стека
-	int quantityOfStackElements(); // возвращает количество непустых элементов в стеке
-	int returnMaxSizeOfStack(); // возвращает максимальный размер стека
-	TypeOfValue returnElementOfStackByIndex(int index); // просто возвращает элемент стека по индексу
+	void putVal(TypeOfValue val); // "РїРѕР»РѕР¶РёС‚СЊ" СЌР»РµРјРµРЅС‚ РІ СЃС‚РµРє
+	TypeOfValue getVal(); // РёР·РІР»РµС‡СЊ СЌР»РµРјРµРЅС‚ РёР· СЃС‚РµРєР°
+	int quantityOfStackElements(); // РІРѕР·РІСЂР°С‰Р°РµС‚ РєРѕР»РёС‡РµСЃС‚РІРѕ РЅРµРїСѓСЃС‚С‹С… СЌР»РµРјРµРЅС‚РѕРІ РІ СЃС‚РµРєРµ
+	int returnMaxSizeOfStack(); // РІРѕР·РІСЂР°С‰Р°РµС‚ РјР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ СЃС‚РµРєР°
+	TypeOfValue returnElementOfStackByIndex(int index); // РїСЂРѕСЃС‚Рѕ РІРѕР·РІСЂР°С‰Р°РµС‚ СЌР»РµРјРµРЅС‚ СЃС‚РµРєР° РїРѕ РёРЅРґРµРєСЃСѓ
 };
 
 template<class TypeOfValue>
@@ -39,7 +39,7 @@ RealStack<TypeOfValue>::RealStack(int maxSizeOfStack) :maxSizeOfStack(maxSizeOfS
 	{
 		if (maxSizeOfStack <= 0)
 		{
-			throw exception("Стек не создан. Задано неверное значение размера. (Необходимо натуральное число).");
+			throw exception("РЎС‚РµРє РЅРµ СЃРѕР·РґР°РЅ. В«Р°РґР°РЅРѕ РЅРµРІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ СЂР°Р·РјРµСЂР°. (РќРµРѕР±С…РѕРґРёРјРѕ РЅР°С‚СѓСЂР°Р»СЊРЅРѕРµ С‡РёСЃР»Рѕ).");
 		}
 
 	}
@@ -53,14 +53,14 @@ RealStack<TypeOfValue>::RealStack(int maxSizeOfStack) :maxSizeOfStack(maxSizeOfS
 	}
 }
 
-template<class TypeOfValue> //конструктор копирования
+template<class TypeOfValue> //РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёВ¤
 RealStack<TypeOfValue>::RealStack(RealStack & oldArrStack) :maxSizeOfStack(oldArrStack.maxSizeOfStack())
 {
 	arrStack = new TypeOfValue[maxSizeOfStack];
 	//for (int i = 0; i < maxSizeOfStack; i++)
 	//{
 	//	arrStack[i] = NULL;
-	//	cout << "магия конструктора копирования" << endl;
+	//	cout << "РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ" << endl;
 	//}
 	for (int i = oldArrStack.quantityOfStackElements(); i > 0; i--)
 	{
@@ -72,7 +72,7 @@ template<class TypeOfValue>
 RealStack<TypeOfValue>::~RealStack()
 {
 	delete[]arrStack;
-//	cout << "деструктор стека" << endl;
+//	cout << "РґРµСЃС‚СЂСѓРєС‚РѕСЂ СЃС‚РµРєР°" << endl;
 }
 
 template<class TypeOfValue>
@@ -90,7 +90,7 @@ void RealStack<TypeOfValue>::putVal(TypeOfValue val)
 		{
 		/*	if (topIndex + 1 >= maxSizeOfStack)
 			{*/
-				throw exception("Элемент не добавлен. Превышен размер стека. ");
+				throw exception("Р­Р»РµРјРµРЅС‚ РЅРµ РґРѕР±Р°РІР»РµРЅ. РџСЂРµРІС‹С€РµРЅ СЂР°Р·РјРµСЂ СЃС‚РµРєР°. ");
 			//}
 
 		}
@@ -117,7 +117,7 @@ TypeOfValue RealStack<TypeOfValue>::getVal()
 	{
 		if (topIndex <0)
 		{
-			throw exception("Невозможно изъять значение - стек пустой. ");
+			throw exception("РќРµРІРѕР·РјРѕР¶РЅРѕ РёР·СЉСЏС‚СЊ Р·РЅР°С‡РµРЅРёРµ - СЃС‚РµРє РїСѓСЃС‚РѕР№. ");
 		}
 
 	}

@@ -17,29 +17,29 @@ class Complex
 
 public:
 
-	static const double M_PI; // Пи 3.14159265358979323846
-	Complex();//конструктор по умолчанию
-	Complex(double real, double imaginary);//конструктор с параметрами
-	Complex(Complex &obj);//конструктор копирования
-	~Complex();//деструктор
+	static const double M_PI; // РџРё 3.14159265358979323846
+	Complex();//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ
+	Complex(double real, double imaginary);//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ СЃ РїР°СЂР°РјРµС‚СЂР°РјРё
+	Complex(Complex &obj);//РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РєРѕРїРёСЂРѕРІР°РЅРёСЏ
+	~Complex();//РґРµСЃС‚СЂСѓРєС‚РѕСЂ
 
-	static int getCount();//возвращает кол-во комплексных чисел
-	double modulus();//возвращает модуль комплексного числа
-	double argument();//возвращает аргумент комплексного числа
-	double getReal();//возвращает действительную часть комплексного числа
-	double getImag();//возвращает мнимую часть комплексного числа
-	void changeReal(double newReal);//изменяет реальную часть числа
-	void changeImag(double newImag);//изменяет мнимую часть числа
+	static int getCount();//РІРѕР·РІСЂР°С‰Р°РµС‚ РєРѕР»-РІРѕ РєРѕРјРїР»РµРєСЃРЅС‹С… С‡РёСЃРµР»
+	double modulus();//РІРѕР·РІСЂР°С‰Р°РµС‚ РјРѕРґСѓР»СЊ РєРѕРјРїР»РµРєСЃРЅРѕРіРѕ С‡РёСЃР»Р°
+	double argument();//РІРѕР·РІСЂР°С‰Р°РµС‚ Р°СЂРіСѓРјРµРЅС‚ РєРѕРјРїР»РµРєСЃРЅРѕРіРѕ С‡РёСЃР»Р°
+	double getReal();//РІРѕР·РІСЂР°С‰Р°РµС‚ РґРµР№СЃС‚РІРёС‚РµР»СЊРЅСѓСЋ С‡Р°СЃС‚СЊ РєРѕРјРїР»РµРєСЃРЅРѕРіРѕ С‡РёСЃР»Р°
+	double getImag();//РІРѕР·РІСЂР°С‰Р°РµС‚ РјРЅРёРјСѓСЋ С‡Р°СЃС‚СЊ РєРѕРјРїР»РµРєСЃРЅРѕРіРѕ С‡РёСЃР»Р°
+	void changeReal(double newReal);//РёР·РјРµРЅСЏРµС‚ СЂРµР°Р»СЊРЅСѓСЋ С‡Р°СЃС‚СЊ С‡РёСЃР»Р°
+	void changeImag(double newImag);//РёР·РјРµРЅСЏРµС‚ РјРЅРёРјСѓСЋ С‡Р°СЃС‚СЊ С‡РёСЃР»Р°
 
-	Complex operator + (Complex secondNumber);//перегрузка сложения
-	Complex operator - (Complex secondNumber);//перегрузка вычитания
-	Complex operator * (Complex secondNumber);//перегрузка умножения
-	Complex operator / (Complex secondNumber);//перегрузка деления
-	Complex operator ++ ();//перегрузка префиксного инкремента
-	Complex operator ++ (int i);//перегрузка постфиксного инкремента
-	Complex operator -- ();//перегрузка префиксного декремента
-	Complex operator -- (int i);//перегрузка постфиксного декремента
-	Complex & operator = (Complex secondNumber);//перегрузка присваивания
-	friend ostream & operator << (ostream& os, const Complex & number); // перегрузка вывода в поток
-	friend istream & operator >> (istream& os, Complex & number); // перегрузка ввода из потока
+	Complex operator + (Complex secondNumber);//РїРµСЂРµРіСЂСѓР·РєР° СЃР»РѕР¶РµРЅРёСЏ
+	Complex operator - (Complex secondNumber);//РїРµСЂРµРіСЂСѓР·РєР° РІС‹С‡РёС‚Р°РЅРёСЏ
+	Complex operator * (Complex secondNumber);//РїРµСЂРµРіСЂСѓР·РєР° СѓРјРЅРѕР¶РµРЅРёСЏ
+	Complex operator / (Complex secondNumber);//РїРµСЂРµРіСЂСѓР·РєР° РґРµР»РµРЅРёСЏ
+	Complex operator ++ ();//РїРµСЂРµРіСЂСѓР·РєР° РїСЂРµС„РёРєСЃРЅРѕРіРѕ РёРЅРєСЂРµРјРµРЅС‚Р°
+	Complex operator ++ (int i);//РїРµСЂРµРіСЂСѓР·РєР° РїРѕСЃС‚С„РёРєСЃРЅРѕРіРѕ РёРЅРєСЂРµРјРµРЅС‚Р°
+	Complex operator -- ();//РїРµСЂРµРіСЂСѓР·РєР° РїСЂРµС„РёРєСЃРЅРѕРіРѕ РґРµРєСЂРµРјРµРЅС‚Р°
+	Complex operator -- (int i);//РїРµСЂРµРіСЂСѓР·РєР° РїРѕСЃС‚С„РёРєСЃРЅРѕРіРѕ РґРµРєСЂРµРјРµРЅС‚Р°
+	Complex & operator = (Complex secondNumber);//РїРµСЂРµРіСЂСѓР·РєР° РїСЂРёСЃРІР°РёРІР°РЅРёСЏ
+	friend ostream & operator << (ostream& os, const Complex & number); // РїРµСЂРµРіСЂСѓР·РєР° РІС‹РІРѕРґР° РІ РїРѕС‚РѕРє
+	friend istream & operator >> (istream& os, Complex & number); // РїРµСЂРµРіСЂСѓР·РєР° РІРІРѕРґР° РёР· РїРѕС‚РѕРєР°
 };

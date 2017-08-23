@@ -12,11 +12,11 @@ enum Menu
 	showParametrsOfStack
 };
 
-int random(int i);//псевдорандом
-void clearBufAndErr(); // чистит поток
-void showMenu(); //показывает пункты меню
-void menu();//работа в меню
-void enterMaxSizeOfStack(int &maxSizeOfStack);//запрашивает размер стека
+int random(int i);//РїСЃРµРІРґРѕСЂР°РЅРґРѕРј
+void clearBufAndErr(); // С‡РёСЃС‚РёС‚ РїРѕС‚РѕРє
+void showMenu(); //РїРѕРєР°Р·С‹РІР°РµС‚ РїСѓРЅРєС‚С‹ РјРµРЅСЋ
+void menu();//СЂР°Р±РѕС‚Р° РІ РјРµРЅСЋ
+void enterMaxSizeOfStack(int &maxSizeOfStack);//Р·Р°РїСЂР°С€РёРІР°РµС‚ СЂР°Р·РјРµСЂ СЃС‚РµРєР°
 
 
 void main()
@@ -34,12 +34,12 @@ int random(int i)
 
 void showMenu()
 {
-	cout << "  1 - Добавить комплексное число в стек" << endl;
-	cout << "  2 - Изъять число из стека" << endl;
-	cout << "  3 - Вывести содержимое стека на экран" << endl;
-	cout << "  4 - Вывести вершину стека на экран" << endl;
-	cout << "  5 - Вывести параметры стека на экран" << endl;
-	cout << "  0 - Выход из программы" << endl;
+	cout << "  1 - Р”РѕР±Р°РІРёС‚СЊ РєРѕРјРїР»РµРєСЃРЅРѕРµ С‡РёСЃР»Рѕ РІ СЃС‚РµРє" << endl;
+	cout << "  2 - РР·СЉСЏС‚СЊ С‡РёСЃР»Рѕ РёР· СЃС‚РµРєР°" << endl;
+	cout << "  3 - Р’С‹РІРµСЃС‚Рё СЃРѕРґРµСЂР¶РёРјРѕРµ СЃС‚РµРєР° РЅР° СЌРєСЂР°РЅ" << endl;
+	cout << "  4 - Р’С‹РІРµСЃС‚Рё РІРµСЂС€РёРЅСѓ СЃС‚РµРєР° РЅР° СЌРєСЂР°РЅ" << endl;
+	cout << "  5 - Р’С‹РІРµСЃС‚Рё РїР°СЂР°РјРµС‚СЂС‹ СЃС‚РµРєР° РЅР° СЌРєСЂР°РЅ" << endl;
+	cout << "  0 - Р’С‹С…РѕРґ РёР· РїСЂРѕРіСЂР°РјРјС‹" << endl;
 }
 
 void clearBufAndErr()
@@ -55,13 +55,13 @@ void enterMaxSizeOfStack(int & maxSizeOfStack)
 	bool endCycle = true;
 	while (endCycle)
 	{
-		cout << "Введите максимальное количество элементов стека:" << endl;
+		cout << "Р’РІРµРґРёС‚Рµ РјР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ СЃС‚РµРєР°:" << endl;
 		try
 		{
 			cin >> maxSizeOfStack;
 			if (!cin.good() || (maxSizeOfStack <= 0))
 			{
-				throw exception("Введено не верное значение (необходимо натуральное число).");
+				throw exception("Р’РІРµРґРµРЅРѕ РЅРµ РІРµСЂРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ (РЅРµРѕР±С…РѕРґРёРјРѕ РЅР°С‚СѓСЂР°Р»СЊРЅРѕРµ С‡РёСЃР»Рѕ).");
 			}
 			else
 			{
@@ -79,10 +79,10 @@ void enterMaxSizeOfStack(int & maxSizeOfStack)
 
 void menu()
 {
-	char key;//код нажатой клавиши
-	bool quit = true;//завершение работы в меню
-	int maxSizeOfStack = 0; // размер стека
-	int intForRand = 5; // базовая переменная для псевдорандома
+	char key;//РєРѕРґ РЅР°Р¶Р°С‚РѕР№ РєР»Р°РІРёС€Рё
+	bool quit = true;//Р·Р°РІРµСЂС€РµРЅРёРµ СЂР°Р±РѕС‚С‹ РІ РјРµРЅСЋ
+	int maxSizeOfStack = 0; // СЂР°Р·РјРµСЂ СЃС‚РµРєР°
+	int intForRand = 5; // Р±Р°Р·РѕРІР°СЏ РїРµСЂРµРјРµРЅРЅР°СЏ РґР»СЏ РїСЃРµРІРґРѕСЂР°РЅРґРѕРјР°
 
 	enterMaxSizeOfStack(maxSizeOfStack);
 	RealStack <Complex> firstStack(maxSizeOfStack);
@@ -115,7 +115,7 @@ void menu()
 				firstStack.putVal(*tempPtrComplexNumber);
 				//if ((firstStack.quantityOfStackElements()) < firstStack.returnMaxSizeOfStack())
 				//{
-				//	cout << "Добавлено число  " << firstStack.returnElementOfStackByIndex(firstStack.quantityOfStackElements() - 1) << endl;
+				//	cout << "Р”РѕР±Р°РІР»РµРЅРѕ С‡РёСЃР»Рѕ  " << firstStack.returnElementOfStackByIndex(firstStack.quantityOfStackElements() - 1) << endl;
 				//}
 
 				intForRand++;
@@ -124,13 +124,13 @@ void menu()
 			}
 			case getComplexNumberFromStack:
 			{
-				//cout << "Изято число  " << firstStack.getVal() << endl;
+				//cout << "РР·СЏС‚Рѕ С‡РёСЃР»Рѕ  " << firstStack.getVal() << endl;
 				firstStack.getVal();
 				break;
 			}
 			case showStack:
 			{
-				cout << "index" << " Комплексное число" << endl;
+				cout << "index" << " РљРѕРјРїР»РµРєСЃРЅРѕРµ С‡РёСЃР»Рѕ" << endl;
 				if (firstStack.quantityOfStackElements() > 0)
 				{
 					for (int i = firstStack.quantityOfStackElements(); i > 0; i--)
@@ -141,7 +141,7 @@ void menu()
 				}
 				else
 				{
-					cout << "Стек пустой" << endl;
+					cout << "РЎС‚РµРє РїСѓСЃС‚РѕР№" << endl;
 				}
 				break;
 			}
@@ -149,33 +149,33 @@ void menu()
 			{
 				if (firstStack.quantityOfStackElements() > 0)
 				{
-					cout << "Вершина стека:  ";
+					cout << "Р’РµСЂС€РёРЅР° СЃС‚РµРєР°:  ";
 					cout << firstStack.returnElementOfStackByIndex(firstStack.quantityOfStackElements() - 1) << endl;
 				}
 				else
 				{
-					cout << "Стек пустой" << endl;
+					cout << "РЎС‚РµРє РїСѓСЃС‚РѕР№" << endl;
 				}
 
 				break;
 			}
 			case showParametrsOfStack:
 			{
-				cout << "Параметры стека:" << endl;
-				cout << "Максимальный размер стека:   " << firstStack.returnMaxSizeOfStack() << endl;
-				cout << "Количество заполненных элементов в стеке:  " << firstStack.quantityOfStackElements() << endl;
+				cout << "РџР°СЂР°РјРµС‚СЂС‹ СЃС‚РµРєР°:" << endl;
+				cout << "РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ СЃС‚РµРєР°:   " << firstStack.returnMaxSizeOfStack() << endl;
+				cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ Р·Р°РїРѕР»РЅРµРЅРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ РІ СЃС‚РµРєРµ:  " << firstStack.quantityOfStackElements() << endl;
 				if (firstStack.quantityOfStackElements() > 0)
 				{
-					cout << "Вершина стека:  ";
+					cout << "Р’РµСЂС€РёРЅР° СЃС‚РµРєР°:  ";
 					cout << firstStack.returnElementOfStackByIndex(firstStack.quantityOfStackElements() - 1) << endl;
 
 				}
-				cout << "Тип данных элементов стека:  " << typeid(firstStack.returnElementOfStackByIndex(0)).name() << endl;
+				cout << "РўРёРї РґР°РЅРЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ СЃС‚РµРєР°:  " << typeid(firstStack.returnElementOfStackByIndex(0)).name() << endl;
 
 				break;
 			}
 
-			default:cout << "Выбран некорректный пункт меню, будьте внимательны" << endl;
+			default:cout << "Р’С‹Р±СЂР°РЅ РЅРµРєРѕСЂСЂРµРєС‚РЅС‹Р№ РїСѓРЅРєС‚ РјРµРЅСЋ, Р±СѓРґСЊС‚Рµ РІРЅРёРјР°С‚РµР»СЊРЅС‹" << endl;
 				break;
 			}
 			cout << "_______________________________" << endl;
