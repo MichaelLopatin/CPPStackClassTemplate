@@ -1,6 +1,6 @@
 #pragma once
 
-#include<iostream>
+#include <iostream>
 #include <locale.h>
 #include <exception>
 
@@ -89,11 +89,7 @@ void RealStack<TypeOfValue>::putVal(TypeOfValue val)
 	{
 		try
 		{
-			/*	if (topIndex + 1 >= maxSizeOfStack)
-			{*/
 			throw exception("Элемент не добавлен. Превышен размер стека. ");
-			//}
-
 		}
 		catch (exception str)
 		{
@@ -146,4 +142,3 @@ TypeOfValue RealStack<TypeOfValue>::returnElementOfStackByIndex(int index)
 {
 	return TypeOfValue(arrStack[index]);
 }
-
