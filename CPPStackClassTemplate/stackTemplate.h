@@ -1,5 +1,4 @@
 #pragma once
-
 #include <iostream>
 #include <locale.h>
 #include <exception>
@@ -73,7 +72,7 @@ template<class TypeOfValue>
 RealStack<TypeOfValue>::~RealStack()
 {
 	delete[]arrStack;
-	cout << "деструктор стека" << endl;
+//	cout << "деструктор стека" << endl;
 }
 
 template<class TypeOfValue>
@@ -89,7 +88,11 @@ void RealStack<TypeOfValue>::putVal(TypeOfValue val)
 	{
 		try
 		{
-			throw exception("Элемент не добавлен. Превышен размер стека. ");
+		/*	if (topIndex + 1 >= maxSizeOfStack)
+			{*/
+				throw exception("Элемент не добавлен. Превышен размер стека. ");
+			//}
+
 		}
 		catch (exception str)
 		{
